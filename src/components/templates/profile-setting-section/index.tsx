@@ -4,8 +4,22 @@ import { LocationSelect } from "@/components/molecules/location-select";
 import { Section } from "@/components/organisms/section";
 import { Cell } from "@/components/ui/cell";
 import { VStack } from "@/components/ui/vstack";
+import { useTelegram } from "@/telegram";
 
 export const ProfileSettingSection = () => {
+    const { webApp } = useTelegram();
+    const onDeleteProfile = () => {
+        webApp?.showPopup({
+            buttons: [
+                {
+                    type: "close",
+                    text: "Close",
+                },
+            ],
+            message: "Message",
+            title: "title",
+        });
+    };
     return (
         <Section title="Settings">
             <VStack>
@@ -21,7 +35,9 @@ export const ProfileSettingSection = () => {
                 >
                     Location
                 </Cell>
-                <Cell leftElement={<DeleteIcon />}>Delete Profile</Cell>
+                <Cell onClick={onDeleteProfile} leftElement={<DeleteIcon />}>
+                    Delete Profile
+                </Cell>
             </VStack>
         </Section>
     );

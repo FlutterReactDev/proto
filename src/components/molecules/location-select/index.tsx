@@ -51,7 +51,7 @@ export const LocationSelect = () => {
                     />
                 </HStack>
             </DrawerTrigger>
-            <DrawerContent className="bg-muted max-h-full">
+            <DrawerContent className="max-h-full">
                 <DrawerHeader className="sticky top-0">
                     <DrawerTitle>Location</DrawerTitle>
                     <DrawerDescription>Enter your details</DrawerDescription>

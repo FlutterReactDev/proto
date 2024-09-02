@@ -27,7 +27,7 @@
 }
 @layer base {
     :root {
-        --background: 227 1% 197%;
+        --background: 227 1% 97%;
         --foreground: 216 2% 11%;
         --card: 0 0% 100%;
         --card-foreground: 222.2 84% 4.9%;
@@ -87,6 +87,6 @@
         @apply border-border;
     }
     body {
-        @apply bg-muted text-foreground;
+        @apply bg-background text-foreground px-4;
     }
 }

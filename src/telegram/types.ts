@@ -48,9 +48,9 @@ export interface IWebApp {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     HapticFeedback: any;
     expand: () => void;
-    showConfirm: (message: string, callback: (res: boolean) => void) => void;
-    showAlert: (message: string, callback: () => void) => void;
-    showPopup: (params: PopupParams) => void;
+    showConfirm: (message: string, callback?: (res: boolean) => void) => void;
+    showAlert: (message: string, callback?: () => void) => void;
+    showPopup: (params: PopupParams, callback?: () => void) => void;
 }
 
 export interface PopupParams {
