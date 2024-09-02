@@ -26,7 +26,6 @@ export const TelegramProvider = ({
     useEffect(() => {
         if (webApp) {
             webApp.expand();
-            webApp.SettingsButton.show();
         }
     }, [webApp]);
 
