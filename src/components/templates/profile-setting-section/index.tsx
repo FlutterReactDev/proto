@@ -12,7 +12,7 @@ export const ProfileSettingSection = () => {
         webApp?.showPopup({
             buttons: [
                 {
-                    type: "cencel",
+                    type: "close",
                     text: "Cencel",
                 },
                 {
