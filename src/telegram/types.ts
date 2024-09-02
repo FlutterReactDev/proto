@@ -89,10 +89,10 @@ export interface MainButton {
     showProgress: (leaveActive: boolean) => void;
     hideProgress: () => void;
     setParams: (params: {
-        text: string;
-        color: string;
-        textColor: string;
-        is_active: boolean;
-        is_visible: boolean;
+        text?: string;
+        color?: string;
+        textColor?: string;
+        is_active?: boolean;
+        is_visible?: boolean;
     }) => void;
 }

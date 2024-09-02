@@ -30,6 +30,13 @@ export const ProfilePage = () => {
             >
                 Open setting button
             </Button>
+            <Button
+                onClick={() => {
+                    webApp?.MainButton.showProgress(true);
+                }}
+            >
+                run main button load
+            </Button>
         </VStack>
     );
 };
