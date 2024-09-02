@@ -25,11 +25,7 @@ export const ProfilePage = () => {
             <Cell leftElement={<SupportIcon />}>Support</Cell>
             <Button
                 onClick={() => {
-                    if (webApp?.SettingsButton.isVisible) {
-                        webApp?.SettingsButton.hide();
-                    } else {
-                        webApp?.SettingsButton.show();
-                    }
+                    webApp?.MainButton.show();
                 }}
             >
                 Open setting button

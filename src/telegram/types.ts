@@ -36,14 +36,7 @@ export interface IWebApp {
     backgroundColor: string;
     BackButton: BackButton;
     SettingsButton: SettingsButton;
-    MainButton: {
-        text: string;
-        color: string;
-        textColor: string;
-        isVisible: boolean;
-        isProgressVisible: boolean;
-        isActive: boolean;
-    };
+    MainButton: MainButton;
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     HapticFeedback: any;
     expand: () => void;
@@ -77,4 +70,29 @@ export interface SettingsButton {
     hide: () => void;
     onClick: (callback: () => void) => void;
     offClick: (callback: () => void) => void;
+}
+
+export interface MainButton {
+    text: string;
+    color: string;
+    textColor: string;
+    isVisible: boolean;
+    isActive: boolean;
+    isProgressVisible: boolean;
+    setText: (text: string) => void;
+    onClick: (callback: () => void) => void;
+    offClick: (callback: () => void) => void;
+    show: () => void;
+    hide: () => void;
+    enable: () => void;
+    disable: () => void;
+    showProgress: (leaveActive: boolean) => void;
+    hideProgress: () => void;
+    setParams: (params: {
+        text: string;
+        color: string;
+        textColor: string;
+        is_active: boolean;
+        is_visible: boolean;
+    }) => void;
 }
