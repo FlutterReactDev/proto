@@ -29,7 +29,22 @@ export const ProfilePage = () => {
                     webApp?.HapticFeedback.notificationOccurred("success");
                 }}
             >
-                notificationOccurred
+                notificationOccurred success
+            </Button>
+
+            <Button
+                onClick={() => {
+                    webApp?.HapticFeedback.notificationOccurred("error");
+                }}
+            >
+                notificationOccurred error
+            </Button>
+            <Button
+                onClick={() => {
+                    webApp?.HapticFeedback.notificationOccurred("warning");
+                }}
+            >
+                notificationOccurred warning
             </Button>
         </VStack>
     );
