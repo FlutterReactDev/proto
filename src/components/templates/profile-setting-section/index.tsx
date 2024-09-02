@@ -5,6 +5,7 @@ import { Section } from "@/components/organisms/section";
 import { Cell } from "@/components/ui/cell";
 import { VStack } from "@/components/ui/vstack";
 import { useTelegram } from "@/telegram";
+import { Link } from "@tanstack/react-router";
 
 export const ProfileSettingSection = () => {
     const { webApp } = useTelegram();
@@ -35,7 +36,11 @@ export const ProfileSettingSection = () => {
                 </Cell>
                 <Cell
                     leftElement={<LocationIcon />}
-                    rightElement={<LocationSelect />}
+                    rightElement={
+                        <Link to="/location">
+                            <LocationSelect />
+                        </Link>
+                    }
                 >
                     Location
                 </Cell>

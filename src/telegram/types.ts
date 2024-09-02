@@ -67,4 +67,5 @@ export interface BackButton {
     isVisible: boolean;
     show: () => void;
     hide: () => void;
+    onClick: (callback: () => void) => void;
 }

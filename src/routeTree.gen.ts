@@ -12,6 +12,7 @@
 
 import { Route as rootRoute } from './routes/__root'
 import { Route as ProfileImport } from './routes/profile'
+import { Route as LocationImport } from './routes/location'
 
 // Create/Update Routes
 
@@ -20,10 +21,22 @@ const ProfileRoute = ProfileImport.update({
   getParentRoute: () => rootRoute,
 } as any)
 
+const LocationRoute = LocationImport.update({
+  path: '/location',
+  getParentRoute: () => rootRoute,
+} as any)
+
 // Populate the FileRoutesByPath interface
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/location': {
+      id: '/location'
+      path: '/location'
+      fullPath: '/location'
+      preLoaderRoute: typeof LocationImport
+      parentRoute: typeof rootRoute
+    }
     '/profile': {
       id: '/profile'
       path: '/profile'
@@ -36,7 +49,7 @@ declare module '@tanstack/react-router' {
 
 // Create and export the route tree
 
-export const routeTree = rootRoute.addChildren({ ProfileRoute })
+export const routeTree = rootRoute.addChildren({ LocationRoute, ProfileRoute })
 
 /* prettier-ignore-end */
 
@@ -46,8 +59,12 @@ export const routeTree = rootRoute.addChildren({ ProfileRoute })
     "__root__": {
       "filePath": "__root.tsx",
       "children": [
+        "/location",
         "/profile"
       ]
+    },
+    "/location": {
+      "filePath": "location.tsx"
     },
     "/profile": {
       "filePath": "profile.tsx"
