@@ -3,7 +3,6 @@ import { ProfileDetailSection } from "@/components/templates/profile-detail-sect
 import { ProfileLegalSection } from "@/components/templates/profile-legal-section";
 import { ProfileSettingSection } from "@/components/templates/profile-setting-section";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
-import { Button } from "@/components/ui/button";
 
 import { Cell } from "@/components/ui/cell";
 import { Heading } from "@/components/ui/heading";
@@ -11,7 +10,7 @@ import { VStack } from "@/components/ui/vstack";
 import { useTelegram } from "@/telegram";
 
 export const ProfilePage = () => {
-    const { user, webApp } = useTelegram();
+    const { user } = useTelegram();
     return (
         <VStack className="gap-8">
             <VStack className="items-center">
@@ -24,28 +23,6 @@ export const ProfilePage = () => {
             <ProfileSettingSection />
             <ProfileLegalSection />
             <Cell leftElement={<SupportIcon />}>Support</Cell>
-            <Button
-                onClick={() => {
-                    webApp?.HapticFeedback.notificationOccurred("success");
-                }}
-            >
-                notificationOccurred success
-            </Button>
-
-            <Button
-                onClick={() => {
-                    webApp?.HapticFeedback.notificationOccurred("error");
-                }}
-            >
-                notificationOccurred error
-            </Button>
-            <Button
-                onClick={() => {
-                    webApp?.HapticFeedback.notificationOccurred("warning");
-                }}
-            >
-                notificationOccurred warning
-            </Button>
         </VStack>
     );
 };

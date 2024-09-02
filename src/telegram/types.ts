@@ -62,6 +62,7 @@ export interface BackButton {
     show: () => void;
     hide: () => void;
     onClick: (callback: () => void) => void;
+    offClick: (callback: () => void) => void;
 }
 
 export interface SettingsButton {
