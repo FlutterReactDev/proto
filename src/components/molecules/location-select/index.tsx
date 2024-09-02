@@ -63,7 +63,7 @@ export const LocationSelect = () => {
                             placeholder="Find a place"
                             className="pl-12 pt-0"
                         />
-                    </div>{" "}
+                    </div>
                     <div className="relative">
                         <SearchIcon className="absolute top-[50%] left-3 translate-y-[-50%] text-foreground z-10" />
                         <Input
