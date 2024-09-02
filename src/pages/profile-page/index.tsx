@@ -4,6 +4,7 @@ import { ProfileLegalSection } from "@/components/templates/profile-legal-sectio
 import { ProfileSettingSection } from "@/components/templates/profile-setting-section";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
+
 import { Cell } from "@/components/ui/cell";
 import { Heading } from "@/components/ui/heading";
 import { VStack } from "@/components/ui/vstack";
@@ -25,17 +26,10 @@ export const ProfilePage = () => {
             <Cell leftElement={<SupportIcon />}>Support</Cell>
             <Button
                 onClick={() => {
-                    webApp?.MainButton.show();
+                    webApp?.HapticFeedback.notificationOccurred("success");
                 }}
             >
-                Open setting button
-            </Button>
-            <Button
-                onClick={() => {
-                    webApp?.MainButton.showProgress(true);
-                }}
-            >
-                run main button load
+                notificationOccurred
             </Button>
         </VStack>
     );

@@ -37,8 +37,8 @@ export interface IWebApp {
     BackButton: BackButton;
     SettingsButton: SettingsButton;
     MainButton: MainButton;
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    HapticFeedback: any;
+
+    HapticFeedback: HapticFeedback;
     expand: () => void;
     showConfirm: (message: string, callback?: (res: boolean) => void) => void;
     showAlert: (message: string, callback?: () => void) => void;
@@ -95,4 +95,12 @@ export interface MainButton {
         is_active?: boolean;
         is_visible?: boolean;
     }) => void;
+}
+
+export interface HapticFeedback {
+    notificationOccurred: (type: "error" | "success" | "warning") => void;
+    impactOccurred: (
+        style: "light" | "medium" | "heavy" | "rigid" | "soft"
+    ) => void;
+    selectionChanged: () => void;
 }
