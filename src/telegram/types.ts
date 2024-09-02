@@ -35,6 +35,7 @@ export interface IWebApp {
     headerColor: string;
     backgroundColor: string;
     BackButton: BackButton;
+    SettingsButton: SettingsButton;
     MainButton: {
         text: string;
         color: string;
@@ -68,4 +69,12 @@ export interface BackButton {
     show: () => void;
     hide: () => void;
     onClick: (callback: () => void) => void;
+}
+
+export interface SettingsButton {
+    isVisible: boolean;
+    show: () => void;
+    hide: () => void;
+    onClick: (callback: () => void) => void;
+    offClick: (callback: () => void) => void;
 }
