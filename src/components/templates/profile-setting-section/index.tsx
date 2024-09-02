@@ -12,12 +12,16 @@ export const ProfileSettingSection = () => {
         webApp?.showPopup({
             buttons: [
                 {
-                    type: "close",
-                    text: "Close",
+                    type: "cencel",
+                    text: "Cencel",
+                },
+                {
+                    type: "destructive",
+                    text: "Agree",
                 },
             ],
-            message: "Message",
-            title: "title",
+            message: "By deleting a profile, you will lose all data on it.",
+            title: "Removal",
         });
     };
     return (
