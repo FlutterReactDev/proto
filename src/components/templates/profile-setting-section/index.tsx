@@ -12,6 +12,10 @@ export const ProfileSettingSection = () => {
         webApp?.showPopup({
             buttons: [
                 {
+                    type: "cencel",
+                    text: "Cencel",
+                },
+                {
                     type: "destructive",
                     text: "Agree",
                 },
