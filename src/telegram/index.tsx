@@ -23,6 +23,12 @@ export const TelegramProvider = ({
         }
     }, []);
 
+    useEffect(() => {
+        if (webApp) {
+            webApp.expand();
+        }
+    }, [webApp]);
+
     const value = useMemo(() => {
         return webApp
             ? {
