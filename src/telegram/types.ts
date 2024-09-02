@@ -34,9 +34,7 @@ export interface IWebApp {
     isClosingConfirmationEnabled: boolean;
     headerColor: string;
     backgroundColor: string;
-    BackButton: {
-        isVisible: boolean;
-    };
+    BackButton: BackButton;
     MainButton: {
         text: string;
         color: string;
@@ -50,7 +48,7 @@ export interface IWebApp {
     expand: () => void;
     showConfirm: (message: string, callback?: (res: boolean) => void) => void;
     showAlert: (message: string, callback?: () => void) => void;
-    showPopup: (params: PopupParams, callback?: () => void) => void;
+    showPopup: (params: PopupParams, callback?: (id: string) => void) => void;
 }
 
 export interface PopupParams {
@@ -63,4 +61,10 @@ export interface PopupButtons {
     id?: string;
     type: "default" | "ok" | "close" | "cencel" | "destructive";
     text?: string;
+}
+
+export interface BackButton {
+    isVisible: boolean;
+    show: () => void;
+    hide: () => void;
 }
