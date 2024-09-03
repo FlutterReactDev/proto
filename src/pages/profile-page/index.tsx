@@ -10,7 +10,9 @@ import { VStack } from "@/components/ui/vstack";
 import { useTelegram } from "@/telegram";
 
 export const ProfilePage = () => {
-    const { user } = useTelegram();
+    const { user, webApp } = useTelegram();
+    console.log(user, webApp);
+
     return (
         <VStack className="gap-8">
             <VStack className="items-center">
