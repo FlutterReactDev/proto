@@ -24,8 +24,8 @@ export const TGMainButton: FC<TGMainButton> = ({
             webApp?.MainButton.setParams({
                 text_color: "#f7f7f7",
                 color: "white",
-                is_visible,
             });
+
             return;
         }
 
