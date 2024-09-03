@@ -30,6 +30,7 @@ export const TelegramProvider = ({
                 color: "#C285D6",
                 text_color: "#ffffff",
             });
+            webApp.setBackgroundColor("#f7f7f7");
         }
     }, [webApp]);
 

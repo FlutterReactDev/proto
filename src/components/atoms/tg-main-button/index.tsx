@@ -52,6 +52,7 @@ export const TGMainButton: FC<TGMainButton> = ({
         text,
         text_color,
         webApp?.MainButton,
+        isLoading,
     ]);
     return <></>;
 };
