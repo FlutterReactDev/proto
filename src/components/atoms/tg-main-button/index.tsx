@@ -9,6 +9,7 @@ interface TGMainButton {
     is_visible?: boolean;
     onClick?: () => void;
     disabled?: boolean;
+    isLoading?: boolean;
 }
 export const TGMainButton: FC<TGMainButton> = ({
     text_color = "#fff",
@@ -18,10 +19,13 @@ export const TGMainButton: FC<TGMainButton> = ({
     onClick,
     disabled = false,
     text,
+    isLoading,
 }) => {
     const { webApp } = useTelegram();
     useEffect(() => {
-        if (disabled) {
+        if (isLoading) {
+            webApp?.MainButton.showProgress(false);
+        } else if (disabled) {
             webApp?.MainButton.setParams({
                 text_color: "#f7f7f7",
                 color: "#fff",
