@@ -43,6 +43,8 @@ export interface IWebApp {
     showConfirm: (message: string, callback?: (res: boolean) => void) => void;
     showAlert: (message: string, callback?: () => void) => void;
     showPopup: (params: PopupParams, callback?: (id: string) => void) => void;
+    setBackgroundColor: (color: string) => void;
+    setHeaderColor: (color: string) => void;
 }
 
 export interface PopupParams {

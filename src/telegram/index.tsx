@@ -31,6 +31,7 @@ export const TelegramProvider = ({
                 text_color: "#ffffff",
             });
             webApp.setBackgroundColor("#f7f7f7");
+            webApp.setHeaderColor("#f7f7f7");
         }
     }, [webApp]);
 
