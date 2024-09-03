@@ -9,8 +9,9 @@ import { useEffect } from "react";
 export const LocationPage = () => {
     const { webApp } = useTelegram();
     useEffect(() => {
-        webApp?.MainButton.show();
-        webApp?.MainButton.disable();
+        webApp?.MainButton.setParams({
+            is_active: false,
+        });
     }, [webApp?.MainButton]);
     return (
         <VStack className="gap-3">
