@@ -28,8 +28,11 @@ export const TGMainButton: FC<TGMainButton> = ({
                 is_visible: true,
                 text,
             });
-
-            return;
+        } else {
+            webApp?.MainButton.setParams({
+                is_visible: true,
+                text,
+            });
         }
 
         webApp?.MainButton.onClick(() => {

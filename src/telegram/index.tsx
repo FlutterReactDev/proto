@@ -26,10 +26,6 @@ export const TelegramProvider = ({
     useEffect(() => {
         if (webApp) {
             webApp.expand();
-            webApp.MainButton.setParams({
-                color: "#C285D6",
-                text_color: "#ffffff",
-            });
         }
     }, [webApp]);
 
