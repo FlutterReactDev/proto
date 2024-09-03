@@ -1,21 +1,11 @@
 import { SearchIcon } from "@/components/atoms/icons";
+import { TGMainButton } from "@/components/atoms/tg-main-button";
 import { LocationSelect } from "@/components/molecules/location-select";
 import { Heading } from "@/components/ui/heading";
 import { Input } from "@/components/ui/input";
 import { VStack } from "@/components/ui/vstack";
-import { useTelegram } from "@/telegram";
-import { useEffect } from "react";
 
 export const LocationPage = () => {
-    const { webApp } = useTelegram();
-    useEffect(() => {
-        webApp?.MainButton.setParams({
-            is_active: false,
-            is_visible: true,
-            color: "white",
-            text_color: "#f7f7f7",
-        });
-    }, [webApp?.MainButton]);
     return (
         <VStack className="gap-3">
             <VStack className="gap-4">
@@ -38,6 +28,7 @@ export const LocationPage = () => {
                     <p>Changes require a 24-hour acceptance period</p>
                 </VStack>
             </VStack>
+            <TGMainButton text="save" />
         </VStack>
     );
 };

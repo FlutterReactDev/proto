@@ -4,19 +4,19 @@ import { getDefaultMainButtonParams } from "./utils";
 interface TGMainButton {
     text?: string;
     color?: string;
-    textColor?: string;
+    text_color?: string;
     is_active?: boolean;
     is_visible?: boolean;
 }
 export const TGMainButton: FC<TGMainButton> = ({
-    textColor = "#fff",
+    text_color = "#fff",
     color = "#C285D6",
     ...props
 }) => {
     const { webApp } = useTelegram();
     useEffect(() => {
-        webApp?.MainButton.setParams({ textColor, color, ...props });
+        webApp?.MainButton.setParams({ text_color, color, ...props });
         return () => webApp?.MainButton.setParams(getDefaultMainButtonParams());
-    }, [props, webApp?.MainButton]);
+    }, [color, props, text_color, webApp?.MainButton]);
     return <></>;
 };
