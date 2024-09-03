@@ -17,6 +17,7 @@ export const TGMainButton: FC<TGMainButton> = ({
     is_active = true,
     onClick,
     disabled = false,
+    text,
 }) => {
     const { webApp } = useTelegram();
     useEffect(() => {
@@ -25,7 +26,7 @@ export const TGMainButton: FC<TGMainButton> = ({
                 text_color: "#f7f7f7",
                 color: "white",
                 is_visible: true,
-                is_active: false,
+                text,
             });
 
             return;
@@ -41,6 +42,7 @@ export const TGMainButton: FC<TGMainButton> = ({
         is_active,
         is_visible,
         onClick,
+        text,
         text_color,
         webApp?.MainButton,
     ]);
