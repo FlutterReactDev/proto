@@ -11,6 +11,9 @@ export const LocationPage = () => {
     useEffect(() => {
         webApp?.MainButton.setParams({
             is_active: false,
+            is_visible: true,
+            color: "#fff",
+            textColor: "rgba(0, 0, 0, 0.50)",
         });
     }, [webApp?.MainButton]);
     return (
