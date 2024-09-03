@@ -1,166 +1,88 @@
-import { ArrowDown, SearchIcon } from "@/components/atoms/icons";
-import { Button } from "@/components/ui/button";
-import {
-    Drawer,
-    DrawerContent,
-    DrawerDescription,
-    DrawerFooter,
-    DrawerHeader,
-    DrawerTitle,
-    DrawerTrigger,
-} from "@/components/ui/drawer";
+import { UnitedArabEmirates } from "@/components/atoms/icons/flags";
 import { HStack } from "@/components/ui/hstack";
-import { Input } from "@/components/ui/input";
-import { cn } from "@/lib/utils";
-import { useState } from "react";
-const locationList = [
-    {
-        name: "English",
-        id: 1,
-    },
-    {
-        name: "Russian",
-        id: 2,
-    },
-    {
-        name: "Russian",
-        id: 3,
-    },
-    {
-        name: "Russian",
-        id: 4,
-    },
-    {
-        name: "Russian",
-        id: 5,
-    },
-    {
-        name: "Russian",
-        id: 6,
-    },
-];
-export const LocationSelect = () => {
-    const [open, setOpen] = useState(false);
-    return (
-        <Drawer open={open} onOpenChange={setOpen}>
-            <DrawerTrigger>
-                <HStack className="text-primary items-center">
-                    <div className="text-[15px]">UAE, Dubai</div>
-                    <ArrowDown
-                        className={cn("transition-all", open && "rotate-180")}
-                    />
-                </HStack>
-            </DrawerTrigger>
-            <DrawerContent className="max-h-full">
-                <DrawerHeader className="sticky top-0">
-                    <DrawerTitle>Location</DrawerTitle>
-                    <DrawerDescription>Enter your details</DrawerDescription>
-                </DrawerHeader>
-                <div className="w-full mx-auto flex flex-col overflow-auto px-4">
-                    <div className="relative">
-                        <SearchIcon className="absolute top-[50%] left-3 translate-y-[-50%] text-foreground z-10" />
-                        <Input
-                            placeholder="Find a place"
-                            className="pl-12 pt-0"
-                        />
-                    </div>
-                    <div className="relative">
-                        <SearchIcon className="absolute top-[50%] left-3 translate-y-[-50%] text-foreground z-10" />
-                        <Input
-                            placeholder="Find a place"
-                            className="pl-12 pt-0"
-                        />
-                    </div>
-                    <div className="relative">
-                        <SearchIcon className="absolute top-[50%] left-3 translate-y-[-50%] text-foreground z-10" />
-                        <Input
-                            placeholder="Find a place"
-                            className="pl-12 pt-0"
-                        />
-                    </div>
-                    <div className="relative">
-                        <SearchIcon className="absolute top-[50%] left-3 translate-y-[-50%] text-foreground z-10" />
-                        <Input
-                            placeholder="Find a place"
-                            className="pl-12 pt-0"
-                        />
-                    </div>
-                    <div className="relative">
-                        <SearchIcon className="absolute top-[50%] left-3 translate-y-[-50%] text-foreground z-10" />
-                        <Input
-                            placeholder="Find a place"
-                            className="pl-12 pt-0"
-                        />
-                    </div>
-                    <div className="relative">
-                        <SearchIcon className="absolute top-[50%] left-3 translate-y-[-50%] text-foreground z-10" />
-                        <Input
-                            placeholder="Find a place"
-                            className="pl-12 pt-0"
-                        />
-                    </div>
-                    <div className="relative">
-                        <SearchIcon className="absolute top-[50%] left-3 translate-y-[-50%] text-foreground z-10" />
-                        <Input
-                            placeholder="Find a place"
-                            className="pl-12 pt-0"
-                        />
-                    </div>
-                    <div className="relative">
-                        <SearchIcon className="absolute top-[50%] left-3 translate-y-[-50%] text-foreground z-10" />
-                        <Input
-                            placeholder="Find a place"
-                            className="pl-12 pt-0"
-                        />
-                    </div>
-                    <div className="relative">
-                        <SearchIcon className="absolute top-[50%] left-3 translate-y-[-50%] text-foreground z-10" />
-                        <Input
-                            placeholder="Find a place"
-                            className="pl-12 pt-0"
-                        />
-                    </div>
-                    <div className="relative">
-                        <SearchIcon className="absolute top-[50%] left-3 translate-y-[-50%] text-foreground z-10" />
-                        <Input
-                            placeholder="Find a place"
-                            className="pl-12 pt-0"
-                        />
-                    </div>
-                    <div className="relative">
-                        <SearchIcon className="absolute top-[50%] left-3 translate-y-[-50%] text-foreground z-10" />
-                        <Input
-                            placeholder="Find a place"
-                            className="pl-12 pt-0"
-                        />
-                    </div>
-                    <div className="relative">
-                        <SearchIcon className="absolute top-[50%] left-3 translate-y-[-50%] text-foreground z-10" />
-                        <Input
-                            placeholder="Find a place"
-                            className="pl-12 pt-0"
-                        />
-                    </div>
-                    <div className="relative">
-                        <SearchIcon className="absolute top-[50%] left-3 translate-y-[-50%] text-foreground z-10" />
-                        <Input
-                            placeholder="Find a place"
-                            className="pl-12 pt-0"
-                        />
-                    </div>
-                    <div className="relative">
-                        <SearchIcon className="absolute top-[50%] left-3 translate-y-[-50%] text-foreground z-10" />
-                        <Input
-                            placeholder="Find a place"
-                            className="pl-12 pt-0"
-                        />
-                    </div>
-                </div>
+import { ListAction, ListActionItem } from "@/components/ui/list-action";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
-                <DrawerFooter className="sticky bottom-0">
-                    <Button>Save</Button>
-                </DrawerFooter>
-            </DrawerContent>
-        </Drawer>
+export const LocationSelect = () => {
+    return (
+        <ScrollArea className="h-72 rounded-xl" type="always">
+            <RadioGroup className="h-10">
+                <ListAction>
+                    <ListActionItem>
+                        <HStack className="items-center justify-between">
+                            <HStack className="items-center">
+                                <UnitedArabEmirates />
+                                Dubai UAE
+                            </HStack>
+                            <RadioGroupItem value="arab" />
+                        </HStack>
+                    </ListActionItem>
+                    <ListActionItem>
+                        <HStack className="items-center justify-between">
+                            <HStack className="items-center">
+                                <UnitedArabEmirates />
+                                Dubai UAE
+                            </HStack>
+                            <RadioGroupItem value="arab" />
+                        </HStack>
+                    </ListActionItem>
+                    <ListActionItem>
+                        <HStack className="items-center justify-between">
+                            <HStack className="items-center">
+                                <UnitedArabEmirates />
+                                Dubai UAE
+                            </HStack>
+                            <RadioGroupItem value="arab" />
+                        </HStack>
+                    </ListActionItem>
+                    <ListActionItem>
+                        <HStack className="items-center justify-between">
+                            <HStack className="items-center">
+                                <UnitedArabEmirates />
+                                Dubai UAE
+                            </HStack>
+                            <RadioGroupItem value="arab" />
+                        </HStack>
+                    </ListActionItem>
+                    <ListActionItem>
+                        <HStack className="items-center justify-between">
+                            <HStack className="items-center">
+                                <UnitedArabEmirates />
+                                Dubai UAE
+                            </HStack>
+                            <RadioGroupItem value="arab" />
+                        </HStack>
+                    </ListActionItem>
+                    <ListActionItem>
+                        <HStack className="items-center justify-between">
+                            <HStack className="items-center">
+                                <UnitedArabEmirates />
+                                Dubai UAE
+                            </HStack>
+                            <RadioGroupItem value="arab" />
+                        </HStack>
+                    </ListActionItem>
+                    <ListActionItem>
+                        <HStack className="items-center justify-between">
+                            <HStack className="items-center">
+                                <UnitedArabEmirates />
+                                Dubai UAE
+                            </HStack>
+                            <RadioGroupItem value="arab" />
+                        </HStack>
+                    </ListActionItem>
+                    <ListActionItem>
+                        <HStack className="items-center justify-between">
+                            <HStack className="items-center">
+                                <UnitedArabEmirates />
+                                Dubai UAE
+                            </HStack>
+                            <RadioGroupItem value="arab" />
+                        </HStack>
+                    </ListActionItem>
+                </ListAction>
+            </RadioGroup>
+        </ScrollArea>
     );
 };

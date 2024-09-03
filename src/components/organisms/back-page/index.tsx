@@ -1,7 +1,6 @@
 import { useTelegram } from "@/telegram";
 import { useNavigate } from "@tanstack/react-router";
 import { FC, PropsWithChildren, useEffect } from "react";
-import { toast } from "sonner";
 interface BackPageProps {
     originUrl: string;
 }
@@ -18,10 +17,7 @@ export const BackPage: FC<PropsWithChildren<BackPageProps>> = ({
                 navigate({
                     to: originUrl,
                 });
-                // webApp.BackButton.hide();
-            });
-            webApp.BackButton.offClick(() => {
-                toast.warning("offclick");
+                webApp.BackButton.hide();
             });
         }
     }, [navigate, originUrl, webApp]);

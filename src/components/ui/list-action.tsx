@@ -1,46 +1,51 @@
-import { FC } from "react";
+import { cn } from "@/lib/utils";
+import { Children, FC, HTMLAttributes, PropsWithChildren } from "react";
 import { Separator } from "./separator";
-
-interface ListActionProps {
-    actions: Action[];
-}
-
-interface Action {
-    label: string;
-    onClick: () => void;
-}
-
-interface ListActionItem {
-    label: string;
-    onClick: () => void;
-}
-
-export const ListAction: FC<ListActionProps> = ({ actions }) => {
+type ListAction = HTMLAttributes<HTMLUListElement>;
+export const ListAction: FC<ListAction> = ({
+    children,
+    className,
+    ...props
+}) => {
     return (
-        <ul className="bg-white rounded-xl ">
-            {actions.map(({ label, onClick }, i) => {
-                return (
-                    <>
-                        <ListActionItem label={label} onClick={onClick} />
-                        {i != actions.length - 1 && (
-                            <div className="pl-4">
-                                <Separator />
-                            </div>
-                        )}
-                    </>
-                );
-            })}
+        <ul className={cn("bg-white rounded-xl", className)} {...props}>
+            {Children.map(children, (child, i) => (
+                <>
+                    {child}
+                    {i != Children.count(children) - 1 && <ListActionDivider />}
+                </>
+            ))}
         </ul>
     );
 };
 
-export const ListActionItem: FC<ListActionItem> = ({ label, onClick }) => {
+type ListActionDividerProps = HTMLAttributes<HTMLDivElement>;
+export const ListActionDivider: FC<ListActionDividerProps> = ({
+    className,
+    ...props
+}) => {
+    return (
+        <div className={cn("pl-4", className)} {...props}>
+            <Separator />
+        </div>
+    );
+};
+
+type ListActionItemProps = HTMLAttributes<HTMLLIElement>;
+export const ListActionItem: FC<PropsWithChildren<ListActionItemProps>> = ({
+    children,
+    className,
+    ...props
+}) => {
     return (
         <li
-            className="text-primary text-[17px] font-normal py-3.5 px-4 cursor-pointer"
-            onClick={onClick}
+            className={cn(
+                "text-primary text-[17px] font-normal py-3.5 px-4 cursor-pointer flex gap-2 items-center w-full",
+                className
+            )}
+            {...props}
         >
-            {label}
+            {children}
         </li>
     );
 };

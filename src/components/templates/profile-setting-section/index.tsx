@@ -1,9 +1,16 @@
-import { DeleteIcon, LocationIcon, WorldIcon } from "@/components/atoms/icons";
+import {
+    ArrowDown,
+    DeleteIcon,
+    LocationIcon,
+    WorldIcon,
+} from "@/components/atoms/icons";
 import { LanguageSelect } from "@/components/molecules/language-select";
 import { LocationSelect } from "@/components/molecules/location-select";
 import { Section } from "@/components/organisms/section";
 import { Cell } from "@/components/ui/cell";
+import { HStack } from "@/components/ui/hstack";
 import { VStack } from "@/components/ui/vstack";
+import { cn } from "@/lib/utils";
 import { useTelegram } from "@/telegram";
 import { Link } from "@tanstack/react-router";
 
@@ -38,7 +45,10 @@ export const ProfileSettingSection = () => {
                     leftElement={<LocationIcon />}
                     rightElement={
                         <Link to="/location">
-                            <LocationSelect />
+                            <HStack className="text-primary items-center">
+                                <div className="text-[15px]">UAE, Dubai</div>
+                                <ArrowDown className={cn("transition-all")} />
+                            </HStack>
                         </Link>
                     }
                 >
