@@ -12,8 +12,8 @@ export const LocationPage = () => {
         webApp?.MainButton.setParams({
             is_active: false,
             is_visible: true,
-            color: "#fff",
-            textColor: "rgba(0, 0, 0, 0.50)",
+            color: "white",
+            textColor: "#f7f7f7",
         });
     }, [webApp?.MainButton]);
     return (
