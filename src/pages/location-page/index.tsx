@@ -13,7 +13,7 @@ export const LocationPage = () => {
             is_active: false,
             is_visible: true,
             color: "white",
-            textColor: "#f7f7f7",
+            text_color: "#f7f7f7",
         });
     }, [webApp?.MainButton]);
     return (

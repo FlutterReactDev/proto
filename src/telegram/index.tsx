@@ -28,7 +28,7 @@ export const TelegramProvider = ({
             webApp.expand();
             webApp.MainButton.setParams({
                 color: "#C285D6",
-                textColor: "#ffffff",
+                text_color: "#ffffff",
             });
         }
     }, [webApp]);

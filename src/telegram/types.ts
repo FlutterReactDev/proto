@@ -92,7 +92,7 @@ export interface MainButton {
     setParams: (params: {
         text?: string;
         color?: string;
-        textColor?: string;
+        text_color?: string;
         is_active?: boolean;
         is_visible?: boolean;
     }) => void;
