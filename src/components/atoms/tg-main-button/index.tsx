@@ -7,22 +7,41 @@ interface TGMainButton {
     text_color?: string;
     is_active?: boolean;
     is_visible?: boolean;
+    onClick?: () => void;
+    disabled?: boolean;
 }
 export const TGMainButton: FC<TGMainButton> = ({
     text_color = "#fff",
     color = "#C285D6",
     is_visible = true,
-    ...props
+    is_active = true,
+    onClick,
+    disabled = false,
 }) => {
     const { webApp } = useTelegram();
     useEffect(() => {
-        webApp?.MainButton.setParams({
-            text_color,
-            color,
-            is_visible,
-            ...props,
+        if (disabled) {
+            webApp?.MainButton.setParams({
+                text_color: "#f7f7f7",
+                color: "white",
+                is_visible,
+                is_active,
+            });
+            return;
+        }
+
+        webApp?.MainButton.onClick(() => {
+            onClick?.();
         });
         return () => webApp?.MainButton.setParams(getDefaultMainButtonParams());
-    }, [color, is_visible, props, text_color, webApp?.MainButton]);
+    }, [
+        color,
+        disabled,
+        is_active,
+        is_visible,
+        onClick,
+        text_color,
+        webApp?.MainButton,
+    ]);
     return <></>;
 };

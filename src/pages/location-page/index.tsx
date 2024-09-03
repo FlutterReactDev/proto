@@ -28,7 +28,7 @@ export const LocationPage = () => {
                     <p>Changes require a 24-hour acceptance period</p>
                 </VStack>
             </VStack>
-            <TGMainButton text="save" />
+            <TGMainButton text="Save" disabled/>
         </VStack>
     );
 };
