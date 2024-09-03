@@ -15,7 +15,7 @@ export const ProfilePage = () => {
         <VStack className="gap-8">
             <VStack className="items-center">
                 <Avatar>
-                    <AvatarImage src="https://picsum.photos/id/237/200/300" />
+                    <AvatarImage src={user?.photo_url} />
                 </Avatar>
                 <Heading>{user?.username}</Heading>
             </VStack>
